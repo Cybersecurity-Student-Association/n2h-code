@@ -33,7 +33,7 @@ async def add(interaction, first_num: int, second_num: int):
 
 @client.event
 async def on_ready():
-    print(f"")
+    print(f"Logged in.")
     await tree.sync(guild=discord.Object(id=1160247666870075422))
 
 # Test command with prefix
