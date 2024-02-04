@@ -2,7 +2,6 @@
 
 import discord
 from discord import app_commands
-from dotenv import load_dotenv
 import hashlib
 
 intents = discord.Intents.default()
@@ -17,6 +16,7 @@ servers = [discord.Object(id=1160247666870075422)]
 # Ping Command
 @tree.command(name="ping", description="Tests whether bot is online", guilds=servers)
 async def ping(interaction):
+    # Me!
     if interaction.user.id == 176106602833772544:
         await interaction.response.send_message("Pong!")
     else:

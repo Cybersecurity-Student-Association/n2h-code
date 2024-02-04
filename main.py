@@ -3,11 +3,11 @@ import asyncio
 
 import os
 import random
+from dotenv import load_dotenv
 from slashCommands import *
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
-
 
 async def presence():
     await client.wait_until_ready()
