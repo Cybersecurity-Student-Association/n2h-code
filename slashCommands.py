@@ -3,6 +3,8 @@
 import discord
 from discord import app_commands
 import hashlib
+import asyncio
+
 
 intents = discord.Intents.default()
 intents.message_content = True

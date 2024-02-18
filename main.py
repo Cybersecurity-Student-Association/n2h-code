@@ -1,10 +1,9 @@
 # This example requires the 'message_content' intent.
-import asyncio
-
 import os
 import random
 from dotenv import load_dotenv
-from slashCommands import *
+from slashCommands import discord, client, asyncio, tree
+from rssParser import RSSParser
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
@@ -37,8 +36,9 @@ async def presence():
 # Run when bot is ready to run
 @client.event
 async def on_ready():
-    print(f"Logged in.")
+    print("Logged in.")
     client.loop.create_task(presence())
+    RSSParser()
     await tree.sync(guild=discord.Object(id=1160247666870075422))
 
 # Test command with prefix
